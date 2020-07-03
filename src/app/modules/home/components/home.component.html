@@ -1,0 +1,18 @@
+<div>
+    <p>
+        Spotify top tracks
+    </p>
+
+    <button (click)="authorization()">redirect</button>
+
+    <button (click)="getTopArtists()" *ngIf="access_token">get top artists</button>
+
+    <div id="section-artists">
+        <div *ngFor="let artist of topArtists" class="artist-div">
+            <img src="{{artist.images[0].url}}" width="120" height="120">
+            <p>
+                {{artist.name}}
+            </p>
+        </div>
+    </div>
+</div>
